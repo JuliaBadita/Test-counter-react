@@ -12,27 +12,29 @@ constructor(props){
 }
 
 // The empty () means that it doesn't take any parameters
-// Here we are setting a function for the button increment, so that evevrytime we click it adds +1 to the count
+// Here we are setting a function for the button increment, so that everytime we click on it, it adds +1 to the count
 increment = () => {
     if (this.state.count !== this.state.nombreMaxPersonnes){
-        this.setState({
+        this.setState((state, props) => ({
         count: this.state.count + 1
-    })}
+    }))}
 };
 
 // Setting function to remove 1 every time we click on the button
 decrement = () => { 
     if (this.state.count !== 0) {      
-    this.setState({
-        count: this.state.count - 1
-    })}
-}
+    this.setState((state, props) => ({
+        count: state.count - 1
+    }))}
+};
 
+
+// Reset button parameters
 reset = () => {
-    this.setState({
+    this.setState((state, props) => ({
         count:  0
-    })
-}
+    }))
+};
 
     render() {
 
