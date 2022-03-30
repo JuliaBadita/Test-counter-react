@@ -16,7 +16,7 @@ constructor(props){
 increment = () => {
     if (this.state.count !== this.state.nombreMaxPersonnes){
         this.setState((state, props) => ({
-        count: this.state.count + 1
+        count: state.count + 1
     }))}
 };
 
